@@ -1,0 +1,156 @@
+,MSA,State,Network_Region,Sales_Region,Indicator,PR
+0,Akron OH,OH,Central,North,No,Jeff Clouse
+1,Alaska,AK,West,Western,No,Vanessa Sanchez
+2,Albany NY,NY,East,North,No,Kelly Anderson
+3,Albuquerque NM,NM,West,Western,No,Vanessa Sanchez
+4,Allentown PA,PA,East,Mid-Atlantic South,No,Mindy Petersen
+5,Arkansas,AR,Central,Mid-Atlantic South,Yes,Sherry Bujosa
+6,Athens GA,GA,Central,Mid-Atlantic South,No,Jeff Clouse
+7,Atlanta GA,GA,Central,Mid-Atlantic South,Yes,Sherry Bujosa
+8,Atlanta Suburbs GA,GA,Central,Mid-Atlantic South,Yes,Sherry Bujosa
+9,Atlantic City NJ,NJ,East,Mid-Atlantic South,No,Holly Schwartz
+10,Austin TX,TX,West,Western,Yes,Sean Murry
+11,Bakersfield CA,CA,West,Western,No,Sean Murry
+12,Baltimore MD,MD,East,Mid-Atlantic South,No,Kelly Anderson
+13,Baltimore Suburbs MD,MD,East,Mid-Atlantic South,No,Kelly Anderson
+14,Baton Rouge LA,LA,Central,Western,No,Sherry Bujosa
+15,Birmingham AL,AL,Central,Mid-Atlantic South,No,Sherry Bujosa
+16,Boise ID,ID,West,Western,No,Vanessa Sanchez
+17,Boston MA,MA,East,North,Yes,Kelly Anderson
+18,Brooklyn NY,NY,East,North,No,Kelly Anderson
+19,Buffalo NY,NY,East,North,No,Kelly Anderson
+20,Charleston SC,SC,East,Mid-Atlantic South,Yes,Holly Schwartz
+21,Charleston WV,WV,Central,North,No,Sherry Bujosa
+22,Charlotte NC,NC,East,Mid-Atlantic South,Yes,Holly Schwartz
+23,Chattanooga TN,TN,Central,Mid-Atlantic South,No,Sherry Bujosa
+24,Chicago IL,IL,Central,North,Yes,Jeff Clouse
+25,Cincinnati OH,OH,Central,North,Yes,Jeff Clouse
+26,Cleveland OH,OH,Central,North,No,Jeff Clouse
+27,Colorado Springs CO,CO,West,Western,No,Vanessa Sanchez
+28,Columbia SC,SC,East,Mid-Atlantic South,No,Holly Schwartz
+29,Columbus OH,OH,Central,North,Yes,Jeff Clouse
+30,Dallas TX,TX,West,Western,Yes,Sean Murry
+31,Dayton OH,OH,Central,North,No,Jeff Clouse
+32,Delaware,DE,East,Mid-Atlantic South,No,Mindy Petersen
+33,Denver CO,CO,West,Western,No,Vanessa Sanchez
+34,Detroit MI,MI,Central,North,No,Jeff Clouse
+35,El Paso TX,TX,West,Western,No,Renee Smith
+36,Florence SC,SC,East,Mid-Atlantic South,No,Holly Schwartz
+37,Fort Myers-Naples FL,FL,East,Mid-Atlantic South,No,Mindy Petersen
+38,Fort Worth-Arlington TX,TX,West,Western,No,Sean Murry
+39,Fresno CA,CA,West,Western,No,Sean Murry
+40,Gary-Hammond IN,IN,Central,North,No,Sherry Bujosa
+41,Green Bay-Appleton WI,WI,Central,North,Yes,Jeff Clouse
+42,Greensboro-Winston-Salem NC,NC,East,Mid-Atlantic South,No,Holly Schwartz
+43,Greenville-Spartanburg SC,SC,East,Mid-Atlantic South,No,Holly Schwartz
+44,Harrisburg PA,PA,East,Mid-Atlantic South,No,Mindy Petersen
+45,Hartford CT,CT,East,North,Yes,Holly Schwartz
+46,Hawaii,HI,West,Western,No,Sean Murry
+47,Houston TX,TX,West,Western,Yes,Vanessa Sanchez
+48,Indianapolis IN,IN,Central,North,Yes,Jeff Clouse
+49,Iowa,IA,Central,Western,Yes,Sherry Bujosa
+50,Jackson MS,MS,Central,Mid-Atlantic South,No,Sherry Bujosa
+51,Jacksonville FL,FL,East,Mid-Atlantic South,Yes,Mindy Petersen
+52,Jersey City-Newark NJ,NJ,East,North,Yes,Holly Schwartz
+53,Kansas,KS,Central,Western,No,Sherry Bujosa
+54,Kansas City MO,MO,Central,Western,Yes,Sherry Bujosa
+55,Knoxville TN,TN,Central,Mid-Atlantic South,Yes,Sherry Bujosa
+56,Las Vegas NV,NV,West,Western,No,Vanessa Sanchez
+57,Lexington KY,KY,Central,North,No,Jeff Clouse
+58,Los Angeles CA,CA,West,Western,Yes,Renee Smith
+59,Louisville KY,KY,Central,North,Yes,Jeff Clouse
+60,Madison WI,WI,Central,North,Yes,Sherry Bujosa
+61,Maine,ME,East,North,No,Mindy Petersen
+62,Manhattan NY,NY,East,North,No,Kelly Anderson
+63,Memphis TN,TN,Central,Mid-Atlantic South,Yes,Sherry Bujosa
+64,Miami-Fort Lauderdale FL,FL,East,Mid-Atlantic South,Yes,Mindy Petersen
+65,Milwaukee WI,WI,Central,North,No,Jeff Clouse
+66,Minneapolis-St Paul MN,MN,Central,Western,No,Sherry Bujosa
+67,Mobile AL,AL,Central,Mid-Atlantic South,No,Sherry Bujosa
+68,Montana,MT,West,Western,Yes,Sean Murry
+69,Montgomery AL,AL,Central,Mid-Atlantic South,No,Sherry Bujosa
+70,NYC Suburbs NY,NY,East,North,No,Kelly Anderson
+71,Nashville TN,TN,Central,Mid-Atlantic South,Yes,Sherry Bujosa
+72,Nebraska,NE,West,Western,Yes,Vanessa Sanchez
+73,New Brunswick NJ,NJ,East,North,No,Holly Schwartz
+74,New Hampshire,NH,East,North,No,Holly Schwartz
+75,New Haven CT,CT,East,North,Yes,Holly Schwartz
+76,New Orleans LA,LA,Central,Western,Yes,Sherry Bujosa
+77,Norfolk-VA Beach VA,VA,East,Mid-Atlantic South,Yes,Kelly Anderson
+78,North Dakota,ND,West,Western,No,Renee Smith
+79,Oakland CA,CA,West,Western,No,Sean Murry
+80,Oklahoma City OK,OK,West,Western,No,Renee Smith
+81,Oregon,OR,West,Western,Yes,Vanessa Sanchez
+82,Orlando FL,FL,East,Mid-Atlantic South,Yes,Mindy Petersen
+83,Other AL,AL,Central,Mid-Atlantic South,No,Sherry Bujosa
+84,Other AZ,AZ,West,Western,No,Renee Smith
+85,Other CA,CA,West,Western,No,Sean Murry
+86,Other CO,CO,West,Western,No,Vanessa Sanchez
+87,Other FL,FL,East,Mid-Atlantic South,No,Mindy Petersen
+88,Other GA,GA,Central,Mid-Atlantic South,No,Jeff Clouse
+89,Other ID,ID,West,Western,No,Vanessa Sanchez
+90,Other IN,IN,Central,North,Yes,Sherry Bujosa
+91,Other KY,KY,Central,North,No,Jeff Clouse
+92,Other LA,LA,Central,Western,No,Sherry Bujosa
+93,Other MA,MA,East,North,No,Kelly Anderson
+94,Other MD,MD,East,Mid-Atlantic South,No,Kelly Anderson
+95,Other MI,MI,Central,North,Yes,Sherry Bujosa
+96,Other MN,MN,Central,Western,No,Sherry Bujosa
+97,Other MO,MO,Central,Western,No,Sherry Bujosa
+98,Other MS,MS,Central,Mid-Atlantic South,No,Sherry Bujosa
+99,Other NC,NC,East,Mid-Atlantic South,No,Holly Schwartz
+100,Other NJ,NJ,East,North,No,Holly Schwartz
+101,Other NM,NM,West,Western,No,Vanessa Sanchez
+102,Other NY,NY,East,North,No,Kelly Anderson
+103,Other OH,OH,Central,North,No,Jeff Clouse
+104,Other OK,OK,West,Western,No,Renee Smith
+105,Other PA,PA,East,Mid-Atlantic South,No,Mindy Petersen
+106,Other TN,TN,Central,Mid-Atlantic South,No,Sherry Bujosa
+107,Other TX,TX,West,Western,No,Renee Smith
+108,Other UT,UT,West,Western,No,Renee Smith
+109,Other VA,VA,East,Mid-Atlantic South,No,Kelly Anderson
+110,Other WA,WA,West,Western,No,Renee Smith
+111,Other WI,WI,Central,North,No,Jeff Clouse
+112,Other WV,WV,Central,North,No,Sherry Bujosa
+113,Peoria IL,IL,Central,North,No,Jeff Clouse
+114,Philadelphia PA,PA,East,Mid-Atlantic South,No,Mindy Petersen
+115,Phoenix AZ,AZ,West,Western,Yes,Renee Smith
+116,Pittsburgh PA,PA,East,Mid-Atlantic South,Yes,Mindy Petersen
+117,Queens NY,NY,East,North,No,Kelly Anderson
+118,Raleigh-Durham NC,NC,East,Mid-Atlantic South,Yes,Holly Schwartz
+119,Reno NV,NV,West,Western,No,Vanessa Sanchez
+120,Rhode Island,RI,East,North,No,Mindy Petersen
+121,Richmond-Petersburg VA,VA,East,Mid-Atlantic South,Yes,Kelly Anderson
+122,Rochester NY,NY,East,North,Yes,Kelly Anderson
+123,Rock Hill SC,SC,East,Mid-Atlantic South,No,Holly Schwartz
+124,Rockford IL,IL,Central,North,No,Jeff Clouse
+125,Sacramento CA,CA,West,Western,Yes,Sean Murry
+126,Salt Lake City UT,UT,West,Western,Yes,Renee Smith
+127,San Antonio TX,TX,West,Western,Yes,Sean Murry
+128,San Bernardino-Riverside CA,CA,West,Western,No,Renee Smith
+129,San Diego CA,CA,West,Western,Yes,Sean Murry
+130,San Francisco CA,CA,West,Western,No,Sean Murry
+131,San Jose CA,CA,West,Western,No,Sean Murry
+132,Santa Ana-Anaheim CA,CA,West,Western,Yes,Renee Smith
+133,Seattle WA,WA,West,Western,Yes,Renee Smith
+134,South Dakota,SD,West,Western,No,Sean Murry
+135,Southern IL,IL,Central,Western,No,Sherry Bujosa
+136,Southwest MI,MI,Central,North,No,Jeff Clouse
+137,Spokane WA,WA,West,Western,Yes,Vanessa Sanchez
+138,St Louis MO,MO,Central,Western,No,Sherry Bujosa
+139,Stamford CT,CT,East,North,No,Holly Schwartz
+140,Staten Island-Bronx NY,NY,East,North,No,Kelly Anderson
+141,Syracuse NY,NY,East,North,No,Kelly Anderson
+142,Tacoma WA,WA,West,Western,Yes,Renee Smith
+143,Tampa-St Petersburg FL,FL,East,Mid-Atlantic South,Yes,Mindy Petersen
+144,Toledo OH,OH,Central,North,Yes,Jeff Clouse
+145,Trenton NJ,NJ,East,Mid-Atlantic South,No,Holly Schwartz
+146,Tucson AZ,AZ,West,Western,Yes,Renee Smith
+147,Tulsa OK,OK,West,Western,No,Vanessa Sanchez
+148,Utica NY,NY,East,North,No,Kelly Anderson
+149,VA-DC Suburbs VA,VA,East,Mid-Atlantic South,No,Kelly Anderson
+150,Vermont,VT,East,North,No,Holly Schwartz
+151,Washington DC,DC,East,Mid-Atlantic South,No,Kelly Anderson
+152,West Palm Beach-Boca Raton FL,FL,East,Mid-Atlantic South,No,Mindy Petersen
+153,Worcester MA,MA,East,North,Yes,Kelly Anderson
+154,Wyoming,WY,West,Western,No,Renee Smith
