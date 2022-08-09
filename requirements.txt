@@ -1,5 +1,7 @@
 cffi==1.15.1
+et-xmlfile==1.1.0
 numpy==1.23.1
+openpyxl==3.0.10
 pandas==1.4.3
 pantab==2.1.1
 pycparser==2.21
