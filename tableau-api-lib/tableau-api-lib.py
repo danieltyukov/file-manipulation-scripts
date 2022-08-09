@@ -3,10 +3,6 @@ import os
 from tableau_api_lib import TableauServerConnection
 from dotenv import load_dotenv
 
-import tableauserverclient as TSC
-
-
-
 config = load_dotenv()
 
 USER = os.getenv('USER')
