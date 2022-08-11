@@ -1,4 +1,7 @@
+import csv
 import os
+import re
+
 import requests
 import xmltodict
 from dotenv import load_dotenv
@@ -52,6 +55,14 @@ def get_all_views_from_API():
     # extracting data in json format
     return list_of_views
 
+def save_view_into_CSV_file(content_decoded):
+    with open(view + ".csv", "w") as csv_file:
+        # Create the writer object with tab delimiter
+        writer = csv.writer(csv_file, delimiter='\t')
+        for line in content_decoded:
+            # Writerow() needs a list of data to be written, so split at all empty spaces in the line
+            writer.writerow(re.split('\s+', line))
+
 #Retrieve all views from tableau
 
 views = get_all_views_from_API()
@@ -69,8 +80,26 @@ csv_info_pandemic_list = list()
 
 #TODO Review this for because we are making a request for each view it could take time
 for view in view_id_list:
-    pandemic_query_view_data = connection.query_view_data(view)
-    csv_info_pandemic_list.append(pandemic_query_view_data.content.decode("utf-8"))
+    try:
+        #Get Details of the specific view
+        pandemic_query_view_data_details_from_view = connection.get_view(view)
+        pandemic_query_view_data_decoded = pandemic_query_view_data_details_from_view.content.decode('utf-8')
+        # Pass view info in order to save in csv
+        pandemic_query_view_data = connection.query_view_data(view)
+        content_decoded = pandemic_query_view_data.content.decode('utf-8').splitlines()
+        save_view_into_CSV_file(content_decoded)
+    except:
+        print("Error reading view from API")
+    # try:
+    #     content_decoded = pandemic_query_view_data.content.decode("utf-8")
+    #
+    # except:
+    #     print("Error decoding content from view")
+    # try:
+    #     csv_info_pandemic_list.append(content_decoded)
+    #     print("Csv Array has "+ len(csv_info_pandemic_list) + "elements")
+    # except:
+    #     print("error Appending into List")
 
 # view = connection.get_view_by_path("Pandemic_Program_Reporting")
 #
