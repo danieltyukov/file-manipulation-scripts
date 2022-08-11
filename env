@@ -1,0 +1,11 @@
+
+USER = "mariano.cimino@alphait.us"
+PASSWORD = "Poxero6904$"
+TABLEAU_SERVER = "https://dub01.online.tableau.com"
+API_VERSION = "3.16"
+SITE_NAME = "alphaitdaniel"
+TOKEN_NAME = "dev-token-mariano"
+TOKEN_SECRET = "j6RPMLitQ3e9x2PUQkYB4w==:s9vJijT0jxOJIim8ju6u37zc5Dktez7g"
+SITE_ID = "alphaitdaniel"
+SITE_URL = "https://dub01.online.tableau.com/#/site/alphaitdaniel/workbooks/944614/views"
+
