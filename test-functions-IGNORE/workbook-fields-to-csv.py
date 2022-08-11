@@ -9,15 +9,17 @@ load_dotenv()
 USER = os.getenv('USER')
 PASSWORD = os.getenv('PASSWORD')
 SITE_NAME = os.getenv('SITE_NAME')
+DIR = os.getenv('DIR')
 
 TABLEAU_SERVER = "https://dub01.online.tableau.com"
 TABLEAU_SITE_ID = SITE_NAME
 TABLEAU_USER = USER
 TABLEAU_PASSWORD = PASSWORD
-DOWNLOAD_DIR = "/download_dir"
+DOWNLOAD_DIR = DIR
 
 print(TABLEAU_USER)
 print(TABLEAU_PASSWORD)
+print(DIR)
 
 def main():
     tableau_auth = TSC.TableauAuth(username=TABLEAU_USER, password=TABLEAU_PASSWORD, site_id=TABLEAU_SITE_ID)
@@ -68,7 +70,7 @@ def put_all_workbook_fields_to_csv(workbooks_dir):
                     # read metadata of workbook
                     myWB = tableaudocumentapi.workbook.Workbook(os.path.join(root, filename))
                     for datasource in myWB.datasources:
-                        for key, field in datasource.fields.iteritems():
+                        for key, field in datasource.fields.items():
                             if len(field.worksheets) > 0:
                                 for worksheet in field.worksheets:
                                     output_file.write(
