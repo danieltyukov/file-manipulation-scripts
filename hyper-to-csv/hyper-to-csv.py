@@ -3,12 +3,29 @@ import os
 import pantab
 from tableauhyperapi import TableName
 
-table_name = TableName("Extract", "Extract")
-hyper_name = "federated_0adm2280nevxa21fel48n0"
-file_name = "federated_0adm2280nevxa21fel48n0.hyper"
 
-path = os.getcwd()
-file_name = path + "\\"+"federated_0adm2280nevxa21fel48n0.hyper"
+def convert_to_csv(list_of_files):
+    """
+    Leverages pantab and pandas to convert a .hyper file to a df, and then convert
+    the df to a csv file.
+    """
+    path = os.getcwd()
+    table_name = TableName("Extract", "Extract")
 
-df = pantab.frame_from_hyper(file_name, table=table_name)
-df.to_csv("output/{}.csv".format(hyper_name))
+    for hyperfile in list_of_files:
+        file_name = hyperfile.replace(".hyper", "")
+        df = pantab.frame_from_hyper(path + "\\" + hyperfile, table=table_name)
+        csv_file_path = path + "\\output\\" + file_name + ".csv"
+        df.to_csv(csv_file_path)
+
+
+current_path = os.getcwd()
+path_files = os.listdir(current_path)
+list_of_files = list()
+
+for file in path_files:
+    file_ext = file[-6:]
+    if file_ext == ".hyper":
+        list_of_files.append(file)
+
+convert_to_csv(list_of_files)
