@@ -1,7 +1,7 @@
 import pandas as pd
 
-worksheet_name = 'Goal2021_New_Final'
-file_name = 'Goal2021_New_Final.xlsx'
-df = pd.read_excel(file_name, sheet_name=None)  
+file_name = 'Goal2021_New_Final'
+object_key = 'Goal2021_New_Final.xlsx'
+df = pd.read_excel(object_key, sheet_name=None)  
 for key in df.keys(): 
-    df[key].to_csv('output/{}--{}.csv'.format(worksheet_name,key))
+    df[key].to_csv('output/{}--{}.csv'.format(file_name,key))
