@@ -7,8 +7,6 @@ from tableauhyperapi import TableName
 
 def lambda_handler(event, context):
 
-
-
     # TODO implement
     s3_client = boto3.client('s3')
     s3_bucket_name = 'guar-file-handler'
