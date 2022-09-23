@@ -19,15 +19,24 @@ def lambda_handler(event, context):
         object_key = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key'])
         file_name = str(object_key.split('/')[-1])
 
-        create_table_statement = "CREATE TABLE IF NOT EXISTS " + file_name.split('.')[0] + " ("
+        table_name = re.sub('[^a-zA-Z0-9 \n\.]', '', file_name.split('.')[0])
+        table_name = table_name.replace(' ', '_')
+
+        create_table_statement = "CREATE TABLE IF NOT EXISTS " + table_name + " ("
         with open('/tmp/' + file_name, 'wb') as data:
             s3.Bucket(source_bucket).download_fileobj(object_key, data)
         with open('/tmp/' + file_name, 'r') as data:
             header = data.readline().split(',')
+            # find column types
+            
+
             for i in range(len(header)):
                 header[i] = re.sub('[^a-zA-Z0-9 \n\.]', '', header[i])
                 header[i] = header[i].replace(' ', '_')
-                create_table_statement += header[i] + " varchar(100),"
+
+                if (header[i] == " " or header[i] == ""):
+                    continue
+                create_table_statement += header[i] + " varchar(255),"
 
             create_table_statement = create_table_statement[:-1] + ");"
 
@@ -46,7 +55,7 @@ def lambda_handler(event, context):
         # fill in data to the table
 
         # copy statement
-        copy_statement = "COPY " + file_name.split('.')[0] + " FROM 's3://" + source_bucket + "/" + "csv-main/" + file_name + "' CREDENTIALS 'aws_access_key_id=" + aws_access_key_id + ";aws_secret_access_key=" + aws_secret_access_key + "' DELIMITER ',' IGNOREHEADER 1 REGION 'ap-south-1';"
+        copy_statement = "COPY " + table_name + " FROM 's3://" + source_bucket + "/" + "csv-main/" + file_name + "' CREDENTIALS 'aws_access_key_id=" + aws_access_key_id + ";aws_secret_access_key=" + aws_secret_access_key + "' DELIMITER ',' IGNOREHEADER 1 REGION 'ap-south-1' REMOVEQUOTES EMPTYASNULL BLANKSASNULL MAXERROR 5;"
         print("copy statement: ")
         print(copy_statement)
 
