@@ -17,38 +17,38 @@ def lambda_handler(event, context):
     print('Before Try ----> File name: (Single File Name) ' + file_name)
     copy_source = {'Bucket': source_bucket, 'Key': object_key}
 
+    tmp_object_key = 'tmp/' + file_name
+    tmp_copy_source = {'Bucket': source_bucket, 'Key': tmp_object_key}
+
     csv_file_name = file_name.split('.')[0]
     print('CSV File Name: ' + csv_file_name)
 
     try:
-        # take the excel file inside this tmp folder.
-        # break it up into seperate csv files.
-        # load those CSV files into csv-main folder.
-        # delete the excel file from the tmp folder.
-        # delete the csv files from the tmp folder.
+        folder_path = 's3://guar-file-handler/'
+        # create a tmp folder inside source_bukcet and put the object_key file inside it
+        s3.meta.client.copy(copy_source, source_bucket, 'tmp/' + file_name)
+        file_path = folder_path + 'tmp/' + file_name
 
-        file_path = 's3://' + source_bucket + '/' + object_key
+        # file_path = 's3://' + source_bucket + '/' + object_key
         print('File Path: ' + file_path)
         df = pd.read_excel(file_path, sheet_name=None)
         for key in df.keys():
-            df[key].to_csv('tmp/{}--{}.csv'.format(csv_file_name, key))
-            # copy the file to the csv-main folder and delete both the original file and the csv file from excel folder
-            s3.meta.client.copy(copy_source, source_bucket, 'csv-main/' + key)
-            s3.meta.client.delete_object(Bucket=source_bucket, Key=object_key)
-
-
-        # pandas file path
-        # full file path to the file in S3
-        df = pd.read_excel(file_path, sheet_name=None)
-        print('df: ' + str(df))
-        for key in df.keys():
-            df[key].to_csv('{}--{}.csv'.format(csv_file_name, key))
-            print('df[key]: ' + str(df[key]))
-            # copy the file to the csv-main folder and delete both the original file and the csv file from excel folder
-            s3.meta.client.copy(copy_source, source_bucket, 'csv-main/' + key)
-
+            print('Data Frame: ' + str(df))
+            print('Key: ' + key)
+            # df[key].to_csv('{}--{}.csv'.format(csv_file_name, key))
+            df[key].to_csv('s3://guar-file-handler/csv-main/tmp/{}--{}.csv'.format(csv_file_name, key))
+            print('Converted to CSV')
+            print('Key: ' + key)
+            # copy the file to the csv-main folder and delete both the original file and the csv file from tmp folder
+            s3.meta.client.copy(tmp_copy_source, source_bucket, 'csv-main/' + key)
+            print('File Copied to csv-main: ', key)
+        
         s3.Object(source_bucket, object_key).delete()
+        s3.Object(source_bucket, tmp_object_key).delete()
+
+        print('File has been converted to CSV and uploaded to csv-main folder')
 
     except Exception as err:
         s3.Object(source_bucket, object_key).delete()
-        print("Error -"+str(err))
+        s3.Object(source_bucket, tmp_object_key).delete()
+        print("Error - "+str(err))
