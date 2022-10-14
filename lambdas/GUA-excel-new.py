@@ -21,9 +21,24 @@ def lambda_handler(event, context):
     print('CSV File Name: ' + csv_file_name)
 
     try:
+        # take the excel file inside this tmp folder.
+        # break it up into seperate csv files.
+        # load those CSV files into csv-main folder.
+        # delete the excel file from the tmp folder.
+        # delete the csv files from the tmp folder.
+
+        file_path = 's3://' + source_bucket + '/' + object_key
+        print('File Path: ' + file_path)
+        df = pd.read_excel(file_path, sheet_name=None)
+        for key in df.keys():
+            df[key].to_csv('tmp/{}--{}.csv'.format(csv_file_name, key))
+            # copy the file to the csv-main folder and delete both the original file and the csv file from excel folder
+            s3.meta.client.copy(copy_source, source_bucket, 'csv-main/' + key)
+            s3.meta.client.delete_object(Bucket=source_bucket, Key=object_key)
+
+
         # pandas file path
         # full file path to the file in S3
-        file_path = 's3://' + source_bucket + '/' + object_key
         df = pd.read_excel(file_path, sheet_name=None)
         print('df: ' + str(df))
         for key in df.keys():

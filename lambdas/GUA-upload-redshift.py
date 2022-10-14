@@ -22,7 +22,20 @@ def lambda_handler(event, context):
         file_name = str(object_key.split('/')[-1])
 
         table_name = re.sub('[^a-zA-Z0-9 \n\.]', '', file_name.split('.')[0])
-        table_name = table_name.replace(' ', '_')
+        table_name = table_name.replace(' ', '')
+
+        # get schema name
+        if '--' in file_name:
+            schema_name = file_name.split('--')[0]
+            schema_name = re.sub('[^a-zA-Z0-9 \n\.]', '', schema_name)
+            schema_name = schema_name.replace(' ', '')
+        else:
+            schema_name = file_name.split('.')[0]
+            schema_name = re.sub('[^a-zA-Z0-9 \n\.]', '', schema_name)
+            schema_name = schema_name.replace(' ', '')
+        
+        # print schema name
+        print('Schema Name: ' + schema_name)
 
         create_table_statement = "CREATE TABLE IF NOT EXISTS " + \
             table_name + " ("
@@ -38,7 +51,23 @@ def lambda_handler(event, context):
 
                 if (header[i] == " " or header[i] == ""):
                     continue
-                create_table_statement += header[i] + " varchar(255),"
+                
+                create_table_statement += header[i] + " VARCHAR(255),"
+                # data.seek(0)
+                # data.readline()
+                # for line in data:
+                #     if (line.split(',')[i].isdigit()):
+                #         create_table_statement += header[i] + " INT,"
+                #         break
+                #     elif (line.split(',')[i].replace('.', '', 1).isdigit()):
+                #         create_table_statement += header[i] + " FLOAT,"
+                #         break
+                #     elif (line.split(',')[i].replace('/', '', 2).isdigit()):
+                #         create_table_stppoatement += header[i] + " DATE,"
+                #         break
+                #     else:
+                #         create_table_statement += header[i] + " VARCHAR(255),"
+                #         break
 
             create_table_statement = create_table_statement[:-1] + ");"
 
@@ -47,9 +76,15 @@ def lambda_handler(event, context):
 
         # connect to Redshift
 
-        conn = psycopg2.connect(dbname='dev', host='redshift-cluster-guardian.cqp1qbc3xi4l.ap-south-1.redshift.amazonaws.com',
-                                port='5439', user='awsuser', password=passw, options='-c search_path=ppo')
+        conn = psycopg2.connect(dbname='alpha', host='redshift-cluster-guardian.cqp1qbc3xi4l.ap-south-1.redshift.amazonaws.com',
+                                port='5439', user='awsuser', password=passw, options='-c search_path=' + schema_name)
         cur = conn.cursor()
+
+        # create a schema in redshift
+        # create schema authorization
+        cur.execute("CREATE SCHEMA IF NOT EXISTS " + schema_name +
+                    " AUTHORIZATION awsuser;")
+        conn.commit()
 
         # create table in Redshift
         cur.execute(create_table_statement)
