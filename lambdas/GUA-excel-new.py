@@ -36,12 +36,13 @@ def lambda_handler(event, context):
             print('Data Frame: ' + str(df))
             print('Key: ' + key)
             # df[key].to_csv('{}--{}.csv'.format(csv_file_name, key))
-            df[key].to_csv('s3://guar-file-handler/csv-main/tmp/{}--{}.csv'.format(csv_file_name, key))
+            df[key].to_csv('s3://guar-file-handler/csv-main/{}--{}.csv'.format(csv_file_name, key))
             print('Converted to CSV')
             print('Key: ' + key)
             # copy the file to the csv-main folder and delete both the original file and the csv file from tmp folder
-            s3.meta.client.copy(tmp_copy_source, source_bucket, 'csv-main/' + key)
-            print('File Copied to csv-main: ', key)
+            # s3.meta.client.copy(tmp_copy_source, source_bucket, 'csv-main/{}--{}.csv'.format(csv_file_name, key))
+            # print('File Copied to csv-main: ', key)
+
         
         s3.Object(source_bucket, object_key).delete()
         s3.Object(source_bucket, tmp_object_key).delete()
