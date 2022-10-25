@@ -36,7 +36,7 @@ def lambda_handler(event, context):
             print('Data Frame: ' + str(df))
             print('Key: ' + key)
             # df[key].to_csv('{}--{}.csv'.format(csv_file_name, key))
-            df[key].to_csv('s3://guar-file-handler/csv-main/{}--{}.csv'.format(csv_file_name, key))
+            df[key].to_csv('s3://guar-file-handler/csv-main/{}--{}.csv'.format(csv_file_name, key), index=False)
             print('Converted to CSV')
             print('Key: ' + key)
             # copy the file to the csv-main folder and delete both the original file and the csv file from tmp folder
